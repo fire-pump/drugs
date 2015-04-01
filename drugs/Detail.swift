@@ -21,15 +21,7 @@ class Detail: UIViewController {
     var id: Int
     override func viewDidLoad() {
         super.viewDidLoad()
-        let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
-        var data = NSData(contentsOfURL: endpoint!)
-        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
-            if let items = json["items"] as? NSArray {
-                                for item in items {
-                                    
-                    }
-                }
-            }        // Dispose of any resources that can be recreated.
+                // Dispose of any resources that can be recreated.
         }
     
     

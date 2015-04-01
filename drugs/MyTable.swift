@@ -14,7 +14,23 @@ class MyTable: UITableViewController {
      var drugsList: [Drug] = [];
     override func viewDidLoad() {
         super.viewDidLoad()
-                // Do any additional setup after loading the view, typically from a nib.
+        var i = 0
+        let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
+        var data = NSData(contentsOfURL: endpoint!)
+        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+            if let items = json ["items"] as? NSArray {
+                for item in items {
+                    
+    	              drugsList.append(Drug(json: item as NSDictionary))
+                    
+                    
+                }
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), {
+            () -> () in
+            // рабочий поток
+        })// Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,9 +45,12 @@ class MyTable: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MyCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MyCell") as DrugViewCell
         let drug = drugsList[indexPath.row]
-        cell.textLabel?.text = drug.name
+        cell.cellName.text = drug.name
+        let img = NSURL( string : drug.cover!)
+        let data = NSData(contentsOfURL: img!)
+        cell.CellImage.image = UIImage (data: data!);
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
