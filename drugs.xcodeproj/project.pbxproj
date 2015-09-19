@@ -13,6 +13,8 @@
 		E1A985D01ACC38D6006E3B98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A985CF1ACC38D6006E3B98 /* Images.xcassets */; };
 		E1A985D31ACC38D6006E3B98 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A985D11ACC38D6006E3B98 /* LaunchScreen.xib */; };
 		E1A985DF1ACC38D6006E3B98 /* drugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */; };
+		E1A985E91ACC3C22006E3B98 /* MyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985E81ACC3C22006E3B98 /* MyTable.swift */; };
+		E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985EA1ACC3D59006E3B98 /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		E1A985D81ACC38D6006E3B98 /* drugsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drugsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A985DD1ACC38D6006E3B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drugsTests.swift; sourceTree = "<group>"; };
+		E1A985E81ACC3C22006E3B98 /* MyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTable.swift; sourceTree = "<group>"; };
+		E1A985EA1ACC3D59006E3B98 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,9 @@
 				E1A985CA1ACC38D6006E3B98 /* ViewController.swift */,
 				E1A985CC1ACC38D6006E3B98 /* Main.storyboard */,
 				E1A985CF1ACC38D6006E3B98 /* Images.xcassets */,
+				E1A985E81ACC3C22006E3B98 /* MyTable.swift */,
 				E1A985D11ACC38D6006E3B98 /* LaunchScreen.xib */,
+				E1A985EA1ACC3D59006E3B98 /* Detail.swift */,
 				E1A985C61ACC38D5006E3B98 /* Supporting Files */,
 			);
 			path = drugs;
@@ -214,6 +220,8 @@
 			files = (
 				E1A985CB1ACC38D6006E3B98 /* ViewController.swift in Sources */,
 				E1A985C91ACC38D5006E3B98 /* AppDelegate.swift in Sources */,
+				E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */,
+				E1A985E91ACC3C22006E3B98 /* MyTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
