@@ -90,9 +90,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-L3-JVX">
-                                <rect key="frame" x="16" y="132" width="343" height="201"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnr-Ga-tc9">
                                 <rect key="frame" x="16" y="351" width="343" height="308"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -104,8 +101,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="DI" destination="PqQ-L3-JVX" id="WFO-W1-TcC"/>
                         <outlet property="DInfo" destination="Cnr-Ga-tc9" id="Vwd-bz-kD3"/>
+                        <outlet property="Did" destination="qJT-zg-aeK" id="rIo-Kt-O00"/>
                         <outlet property="idDetail" destination="qJT-zg-aeK" id="7hH-9I-5AT"/>
                     </connections>
                 </viewController>
