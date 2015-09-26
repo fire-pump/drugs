@@ -10,6 +10,8 @@ import UIKit
 
         class DrugViewCell : UITableViewCell {
         
+            @IBOutlet weak var cellName: UILabel!
             
+            @IBOutlet weak var CellImage: UIImageView!
             
         }
