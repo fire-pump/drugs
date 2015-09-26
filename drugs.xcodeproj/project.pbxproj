@@ -15,6 +15,9 @@
 		E1A985DF1ACC38D6006E3B98 /* drugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */; };
 		E1A985E91ACC3C22006E3B98 /* MyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985E81ACC3C22006E3B98 /* MyTable.swift */; };
 		E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985EA1ACC3D59006E3B98 /* Detail.swift */; };
+		E1E0E0B01BB623DA00584DD7 /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0E0AF1BB623DA00584DD7 /* Drug.swift */; };
+		E1E0E0B31BB62A2800584DD7 /* CustomTableVIewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E0E0B21BB62A2800584DD7 /* CustomTableVIewCell.m */; };
+		E1E0E0B51BB62A6200584DD7 /* DrugViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0E0B41BB62A6200584DD7 /* DrugViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drugsTests.swift; sourceTree = "<group>"; };
 		E1A985E81ACC3C22006E3B98 /* MyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTable.swift; sourceTree = "<group>"; };
 		E1A985EA1ACC3D59006E3B98 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E1E0E0AF1BB623DA00584DD7 /* Drug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
+		E1E0E0B11BB62A2800584DD7 /* CustomTableVIewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableVIewCell.h; sourceTree = "<group>"; };
+		E1E0E0B21BB62A2800584DD7 /* CustomTableVIewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableVIewCell.m; sourceTree = "<group>"; };
+		E1E0E0B41BB62A6200584DD7 /* DrugViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,8 @@
 				E1A985E81ACC3C22006E3B98 /* MyTable.swift */,
 				E1A985D11ACC38D6006E3B98 /* LaunchScreen.xib */,
 				E1A985EA1ACC3D59006E3B98 /* Detail.swift */,
+				E1E0E0B41BB62A6200584DD7 /* DrugViewCell.swift */,
+				E1E0E0AF1BB623DA00584DD7 /* Drug.swift */,
 				E1A985C61ACC38D5006E3B98 /* Supporting Files */,
 			);
 			path = drugs;
@@ -97,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				E1A985C71ACC38D5006E3B98 /* Info.plist */,
+				E1E0E0B11BB62A2800584DD7 /* CustomTableVIewCell.h */,
+				E1E0E0B21BB62A2800584DD7 /* CustomTableVIewCell.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,9 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E0E0B31BB62A2800584DD7 /* CustomTableVIewCell.m in Sources */,
 				E1A985CB1ACC38D6006E3B98 /* ViewController.swift in Sources */,
 				E1A985C91ACC38D5006E3B98 /* AppDelegate.swift in Sources */,
 				E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */,
+				E1E0E0B51BB62A6200584DD7 /* DrugViewCell.swift in Sources */,
+				E1E0E0B01BB623DA00584DD7 /* Drug.swift in Sources */,
 				E1A985E91ACC3C22006E3B98 /* MyTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,9 +360,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = drugs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -356,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = drugs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +432,7 @@
 				E1A985E41ACC38D6006E3B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A985E51ACC38D6006E3B98 /* Build configuration list for PBXNativeTarget "drugsTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +441,7 @@
 				E1A985E71ACC38D6006E3B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

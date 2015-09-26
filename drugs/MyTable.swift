@@ -11,9 +11,10 @@ import UIKit
 
 class MyTable: UITableViewController {
     
+     var drugsList: [Drug] = [];
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+                // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,12 +23,15 @@ class MyTable: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1000
+       
+        return drugsList.count
+        
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell") as UITableViewCell
-        cell.textLabel?.text = "Drug #\(indexPath.item)"
+        let drug = drugsList[indexPath.row]
+        cell.textLabel?.text = drug.name
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
