@@ -11,51 +11,10 @@ import UIKit
 
 class MyTable: UITableViewController {
     
+     var drugsList: [Drug] = [];
     override func viewDidLoad() {
         super.viewDidLoad()
-        class Drug {
-            
-            var idi : Int?
-            var name: String?
-            var description: String?
-            var usage: String?
-            var affect: String?
-            var cautions : String?
-            var addiction: Int?
-            var price : Int?
-            var cover : String?
-            
-            init(json: NSDictionary) {
-                if let i = json["id"] as? Int {
-                    self.idi = i
-                }
-                if let n = json["name"] as? String {
-                    self.name = n
-                }
-                if let d = json["description"] as? String {
-                    self.description = d
-                }
-                if let u = json["usage"] as? String {
-                    self.usage = u
-                }
-                if let a = json["affect"] as? String {
-                    self.affect = a
-                }
-                if let c = json["cautions"] as? String {
-                    self.cautions = c
-                }
-                if let ad = json["addiction"] as? Int {
-                    self.addiction = ad
-                }
-                if let p = json["price"] as? Int {
-                    self.price = p
-                }
-                if let url = json["cover"] as? String {
-                    self.cover = url
-                }
-            }
-        }
-        // Do any additional setup after loading the view, typically from a nib.
+                // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,12 +23,15 @@ class MyTable: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1000
+       
+        return drugsList.count
+        
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell") as UITableViewCell
-        cell.textLabel?.text = "Drug #\(indexPath.item)"
+        let drug = drugsList[indexPath.row]
+        cell.textLabel?.text = drug.name
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

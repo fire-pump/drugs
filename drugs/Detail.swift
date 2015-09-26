@@ -26,9 +26,7 @@ class Detail: UIViewController {
         if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
             if let items = json["items"] as? NSArray {
                                 for item in items {
-                                    let drug = Drug(json: item as NSDictionary)
-                                    var drugsList: [Drug] = [];
-                                      drugsList.append(drug)
+                                    
                     }
                 }
             }        // Dispose of any resources that can be recreated.
