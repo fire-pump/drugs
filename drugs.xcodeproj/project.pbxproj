@@ -15,6 +15,7 @@
 		E1A985DF1ACC38D6006E3B98 /* drugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */; };
 		E1A985E91ACC3C22006E3B98 /* MyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985E81ACC3C22006E3B98 /* MyTable.swift */; };
 		E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A985EA1ACC3D59006E3B98 /* Detail.swift */; };
+		E1E0E0AC1BB61A0700584DD7 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0E0AB1BB61A0700584DD7 /* Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E1A985DE1ACC38D6006E3B98 /* drugsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drugsTests.swift; sourceTree = "<group>"; };
 		E1A985E81ACC3C22006E3B98 /* MyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTable.swift; sourceTree = "<group>"; };
 		E1A985EA1ACC3D59006E3B98 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E1E0E0AB1BB61A0700584DD7 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				E1A985CF1ACC38D6006E3B98 /* Images.xcassets */,
 				E1A985E81ACC3C22006E3B98 /* MyTable.swift */,
 				E1A985D11ACC38D6006E3B98 /* LaunchScreen.xib */,
+				E1E0E0AB1BB61A0700584DD7 /* Controller.swift */,
 				E1A985EA1ACC3D59006E3B98 /* Detail.swift */,
 				E1A985C61ACC38D5006E3B98 /* Supporting Files */,
 			);
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E0E0AC1BB61A0700584DD7 /* Controller.swift in Sources */,
 				E1A985CB1ACC38D6006E3B98 /* ViewController.swift in Sources */,
 				E1A985C91ACC38D5006E3B98 /* AppDelegate.swift in Sources */,
 				E1A985EB1ACC3D59006E3B98 /* Detail.swift in Sources */,
@@ -415,6 +419,7 @@
 				E1A985E41ACC38D6006E3B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A985E51ACC38D6006E3B98 /* Build configuration list for PBXNativeTarget "drugsTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				E1A985E71ACC38D6006E3B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
