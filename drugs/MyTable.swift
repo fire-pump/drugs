@@ -14,7 +14,15 @@ class MyTable: UITableViewController {
      var drugsList: [Drug] = [];
     override func viewDidLoad() {
         super.viewDidLoad()
-                // Do any additional setup after loading the view, typically from a nib.
+        let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
+        var data = NSData(contentsOfURL: endpoint!)
+        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+            if let items = json["items"] as? NSArray {
+                for item in items {
+                    
+                }
+            }
+        }                // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
