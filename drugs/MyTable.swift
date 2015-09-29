@@ -15,23 +15,43 @@ class MyTable: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var i = 0
-        let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
-        var data = NSData(contentsOfURL: endpoint!)
-        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
-            if let items = json ["items"] as? NSArray {
-                for item in items {
+        //let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
+        //var data = NSData(contentsOfURL: endpoint!)
+        //if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+        let requestUrl = NSURL(string: "http://jesuscodes.me/drugs/list.json")
+        print("Api request: url=\(requestUrl!)")
+        let request = NSMutableURLRequest(URL: requestUrl!)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            (data, response, error) in let data = NSData (contentsOfURL: requestUrl!)
+            if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+                if let items = json ["items"] as? NSArray {
+                    for item in items {
                     
-    	              drugsList.append(Drug(json: item as NSDictionary))
+                        self.drugsList.append(Drug(json: item as NSDictionary))
                     
                     
-                }
+                    }
+                     }
             }
+            dispatch_async(dispatch_get_main_queue(), {
+                () -> () in
+                // рабочий поток
+            })
+            // тут твой data
         }
-        dispatch_async(dispatch_get_main_queue(), {
-            () -> () in
-            // рабочий поток
-        })// Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        task.resume()
+        //if let items = json ["items"] as? NSArray {
+                //for item in items {
+                    
+    	          //    drugsList.append(Drug(json: item as NSDictionary))
+                    
+                    
+                //}
+           // }
+        
+           }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
