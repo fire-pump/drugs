@@ -11,13 +11,10 @@ import UIKit
 
 class MyTable: UITableViewController {
     
-     var drugsList: [Drug] = [];
+    var drugsList: [Drug] = [];
     override func viewDidLoad() {
         super.viewDidLoad()
         var i = 0
-        //let endpoint = NSURL(string: "http://jesuscodes.me/drugs/list.json")
-        //var data = NSData(contentsOfURL: endpoint!)
-        //if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
         let requestUrl = NSURL(string: "http://jesuscodes.me/drugs/list.json")
         print("Api request: url=\(requestUrl!)")
         let request = NSMutableURLRequest(URL: requestUrl!)
@@ -27,31 +24,22 @@ class MyTable: UITableViewController {
             if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
                 if let items = json ["items"] as? NSArray {
                     for item in items {
-                    
+                        
                         self.drugsList.append(Drug(json: item as NSDictionary))
-                    
-                    
+                        
+                        
                     }
-                     }
+                }
             }
             dispatch_async(dispatch_get_main_queue(), {
-                () -> () in
-                // рабочий поток
+                () -> () in self.tableView.reloadData()
+                
             })
-            // тут твой data
         }
         
         task.resume()
-        //if let items = json ["items"] as? NSArray {
-                //for item in items {
-                    
-    	          //    drugsList.append(Drug(json: item as NSDictionary))
-                    
-                    
-                //}
-           // }
         
-           }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,15 +47,15 @@ class MyTable: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-       
+        
         return drugsList.count
         
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> DrugViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell") as DrugViewCell
         let drug = drugsList[indexPath.row]
-        cell.cellName.text = drug.name
+        cell.cellName.text = "\(drug.name) #\(indexPath.item)"
         let img = NSURL( string : drug.cover!)
         let data = NSData(contentsOfURL: img!)
         cell.CellImage.image = UIImage (data: data!);
